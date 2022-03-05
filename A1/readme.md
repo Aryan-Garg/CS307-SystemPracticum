@@ -1,4 +1,4 @@
-# Assignment 1
+# CS307: Assignment 1
 
 ## Steps to execute everything:
 1. Unzip using(if on Linux CLI): 
