@@ -8,6 +8,9 @@
 #include<readline/history.h>
 #include <errno.h>
 #include <dirent.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <stdbool.h> 
 
 #define maxBuffer 1024
 
@@ -15,6 +18,11 @@ char* listOfCommands[maxBuffer];
 char* cmd_hist[maxBuffer];
 int cmd_count;
 extern char **environ;
+
+bool file_exists (char *filename) {
+  struct stat buf;   
+  return (stat (filename, &buf) == 0);
+}
 
 void printCurrentDirectory(int fancy){
 	char cwd[maxBuffer];
@@ -132,12 +140,12 @@ void changeCWD(char* new_directory){
 	chdir(new_directory);
 }
 
-void runExecutable(char** tokens){
+void runExecutable(char* tokens){
 	pid_t pid = fork(); 
 	if (pid == -1) {
 	    printf("Failed forking child..\n");
 	} else if (pid == 0) {
-		char *args[]={tokens[1],NULL};
+		char *args[]={tokens,NULL};
 	    if (execvp(args[0], args) < 0) {
 	        printf("\nCould not execute command.");
         }
@@ -157,8 +165,19 @@ void runPause(){
 	while((lookForEnter = getchar()) != '\n'); 
 }
 
+int isExecutable(char* cmd_str){
+	struct stat sb;
+	if(stat(cmd_str, &sb) == 0 && sb.st_mode & S_IXUSR){
+		return 1;
+	}
+	return 0;
+}
+
 void callFunction(char* cmd_str){
-	if(!strcmp((const char*)cmd_str,"help")){
+	if(isExecutable(cmd_str)){
+		runExecutable(cmd_str);
+	}
+	else if(!strcmp((const char*)cmd_str,"help")){
 		giveHelp();
 	}
 	else if(!strcmp((const char*)cmd_str,"history")){
@@ -181,9 +200,6 @@ void callFunction(char* cmd_str){
 	if(!strcmp((const char*)tokens[0],"echo")){
 		runEcho(tokens,cnt_val);
 	}
-	else if(!strcmp((const char*)tokens[0],"run")){
-		runExecutable(tokens);
-	}
 	else if(!strcmp((const char*)tokens[0],"cd")){
 		changeCWD(tokens[1]);
 	}
@@ -191,6 +207,7 @@ void callFunction(char* cmd_str){
 		showDirectoryContent(tokens[1]);
 	}
 }
+
 
 int main(int argc, char** argv){
 	cmd_count=0;
@@ -207,6 +224,10 @@ int main(int argc, char** argv){
 	while(1){
 		printCurrentDirectory(1);
 		if(inputTaken(inputStr)){
+			continue;
+		}
+		if(isExecutable(inputStr)){
+			runExecutable(inputStr);
 			continue;
 		}
 		int counter = 0;
@@ -244,6 +265,9 @@ int main(int argc, char** argv){
 				else 
 					printf("\n[-] Couldn't set env var PWD :(");
 			}
+			else{
+				printf("Wrong Command!!\n");
+			}
 		}
 		
 		if(counter>1){
@@ -253,24 +277,27 @@ int main(int argc, char** argv){
 			else if(!strcmp(tokens[0],"echo")){
 				runEcho(tokens,counter);
 			}
-			else if(!strcmp(tokens[0],"run")){
-				runExecutable(tokens);
-			}
 			else if(!strcmp(tokens[0],"dir")){
 				showDirectoryContent(tokens[1]);
 			}
 			else if(!strcmp(tokens[0],"myshell")){
-				FILE *filePointer;
-				filePointer = fopen(tokens[1],"r");
-				char dataToBeRead[100];
-				while( fgets ( dataToBeRead, 100, filePointer ) != NULL )
-			    {
-			       char *c = strchr(dataToBeRead, '\n');
-				   if (c){
-				   	   *c = 0;
-				   }
-				   callFunction(dataToBeRead);
-			    }
+				if(file_exists(tokens[1])){
+					FILE *filePointer;
+					filePointer = fopen(tokens[1],"r");
+					char dataToBeRead[100];
+					while( fgets ( dataToBeRead, 100, filePointer ) != NULL )
+				    {
+				       char *c = strchr(dataToBeRead, '\n');
+					   if (c){
+					   	   *c = 0;
+					   }
+					   callFunction(dataToBeRead);
+				    }
+				}
+				else{
+					printf("File does not exits\n");
+				}
+				
 			}
 			else{
 				printf("Invalid command or too many arguements passed. Try: help for more info.");
