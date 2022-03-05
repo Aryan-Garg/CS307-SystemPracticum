@@ -31,7 +31,7 @@ void printCurrentDirectory(int fancy){
 
 void saveHistory(char* buffer){
 	FILE *filePointer;
-	filePointer = fopen("/mnt/c/Users/HP/Desktop/sem_6/SysPrac/A1/command_history.txt","a");
+	filePointer = fopen("/mnt/c/Users/Anukool Dwivedi/Desktop/Sem6/CS307/assign1/A1/command_history.txt","a");
 	if(strlen(buffer)>0){
 		fputs(buffer,filePointer);
 		fputs("\n",filePointer);
@@ -57,20 +57,6 @@ int inputTaken(char* line){
 	}
 }
 
-void init_commands(){
-	listOfCommands[0]="help";
-	listOfCommands[1]="clr";
-	listOfCommands[2]="pause";
-	listOfCommands[3]="quit";
-	listOfCommands[4]="history";
-	listOfCommands[5]="cd";
-	listOfCommands[6]="dir";
-	listOfCommands[7]="echo";
-	listOfCommands[8]="run";
-	listOfCommands[9]="environ";
-	listOfCommands[9]="myshell";
-}
-
 void giveHelp(){
 	puts(
         "List of Commands supported:"
@@ -89,7 +75,7 @@ void giveHelp(){
 
 void showHistory(){
 	FILE *filePointer;
-	filePointer = fopen("/mnt/c/Users/HP/Desktop/sem_6/SysPrac/A1/command_history.txt","r");
+	filePointer = fopen("/mnt/c/Users/Anukool Dwivedi/Desktop/Sem6/CS307/assign1/A1/command_history.txt","r");
 	char dataToBeRead[100];
 	while( fgets ( dataToBeRead, 100, filePointer ) != NULL )
     {
@@ -165,6 +151,12 @@ void showEnvironmentVariables(){
 	for (char **env = environ; *env; ++env) printf("%s\n", *env);
 }
 
+void runPause(){
+	printf("Press Enter to terminate indefinite pause...\n");
+	char lookForEnter;
+	while((lookForEnter = getchar()) != '\n'); 
+}
+
 void callFunction(char* cmd_str){
 	if(!strcmp((const char*)cmd_str,"help")){
 		giveHelp();
@@ -178,6 +170,12 @@ void callFunction(char* cmd_str){
 	else if(!strcmp((const char*)cmd_str,"environ")){
 		showEnvironmentVariables();
 	}
+	else if(!strcmp((const char*)cmd_str,"pause")){
+		runPause();
+	}
+	else if(!strcmp((const char*)cmd_str,"quit")){
+		exit(0);
+	}
 	char* tokens[100];
 	int cnt_val = tokenize(cmd_str,tokens);
 	if(!strcmp((const char*)tokens[0],"echo")){
@@ -186,12 +184,17 @@ void callFunction(char* cmd_str){
 	else if(!strcmp((const char*)tokens[0],"run")){
 		runExecutable(tokens);
 	}
+	else if(!strcmp((const char*)tokens[0],"cd")){
+		changeCWD(tokens[1]);
+	}
+	else if(!strcmp((const char*)tokens[0],"dir")){
+		showDirectoryContent(tokens[1]);
+	}
 }
 
 int main(int argc, char** argv){
 	cmd_count=0;
 	char inputStr[maxBuffer];
-	init_commands();
 	// set shell env variable (Q10)
 	char shell_env[maxBuffer] = "shell=";
 	char cwd123[maxBuffer];
@@ -217,9 +220,7 @@ int main(int argc, char** argv){
 				system("clear");
 			}
 			else if(!strcmp(inputStr,"pause")){
-				printf("Press Enter to terminate indefinite pause...\n");
-				char lookForEnter;
-				while((lookForEnter = getchar()) != '\n');  
+				runPause();
 			}
 			else if(!strcmp(inputStr,"quit")){
 				printf("GoodBye\n");
