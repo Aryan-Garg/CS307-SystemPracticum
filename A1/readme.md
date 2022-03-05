@@ -15,8 +15,8 @@ If the source and destination directories are the same, you can simply do:
 
 4. To clean the executables/object files, use:
 > make clean  
-
-### Group:
+---  
+### Group Members:
 > Aryan Garg (B19153)  
 > Anukool Dwivedi (B19071)  
 > Jainan Tandel ()  
