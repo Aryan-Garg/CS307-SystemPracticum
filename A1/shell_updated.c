@@ -6,6 +6,8 @@
 #include<string.h>
 #include<readline/readline.h>
 #include<readline/history.h>
+#include <errno.h>
+#include <dirent.h>
 #define maxBuffer 1024
 
 char* listOfCommands[maxBuffer];
@@ -84,14 +86,16 @@ void showHistory(){
     }
 }
 
-void showDirectoryContent(){
+void showDirectoryContent(char* dirName){
 	struct dirent *de;  
-    DIR *dr = opendir(".");
+    DIR *dr = opendir(dirName);
   
-    if (dr == NULL)  
-    {
-        printf("Could not open current directory" );
-        return ;
+    if (dr == NULL) {
+        switch (errno) {
+            case EACCES: printf("Permission denied\n"); break;
+            case ENOENT: printf("Directory does not exist\n"); break;
+            case ENOTDIR: printf("'%s' is not a directory\n", dirName); break;
+        }
     }
     int cnt=0;
     while ((de = readdir(dr)) != NULL){
@@ -194,8 +198,8 @@ int main(int argc, char** argv, char * envp[]){
 			else if(!strcmp(inputStr,"history")){
 				showHistory();
 			}
-			else if(!strcmp(inputStr,"dir")){
-				showDirectoryContent();
+			else if(!strcmp(tokens[0],"dir")){
+				showDirectoryContent(tokens[1]);
 			}
 			else if(!strcmp(inputStr,"environ")){
 				showEnvironmentVariables(envp);
