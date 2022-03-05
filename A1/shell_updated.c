@@ -8,18 +8,25 @@
 #include<readline/history.h>
 #include <errno.h>
 #include <dirent.h>
+
 #define maxBuffer 1024
 
 char* listOfCommands[maxBuffer];
 char* cmd_hist[maxBuffer];
 int cmd_count;
+extern char **environ;
 
-void printCurrentDirectory(){
+void printCurrentDirectory(int fancy){
 	char cwd[maxBuffer];
 	getcwd(cwd,maxBuffer);
-	printf("\033[1;31m");
-	printf("\nAMY:%s",cwd);
-	printf("\033[0m");
+	if(fancy){	
+		printf("\033[1;31m");
+		printf("\nAMY:%s",cwd);
+		printf("\033[0m");
+	}
+	else
+		printf("No arguement passed to cd(PWD); Currently at: %s",cwd);
+
 }
 
 void saveHistory(char* buffer){
@@ -35,7 +42,11 @@ void saveHistory(char* buffer){
 int inputTaken(char* line){
 	char* buffer;
 	buffer = readline("$ ");
-	if(strlen(buffer)!=0){
+	if(!buffer){
+		printf("Ctrl-D was hit!\nQuitting... Goodbye.\n");
+		exit(0);
+	}
+	else if(strlen(buffer)!=0){
 		saveHistory(buffer);
 		cmd_hist[cmd_count++]=buffer;
 		add_history(buffer);
@@ -62,18 +73,18 @@ void init_commands(){
 
 void giveHelp(){
 	puts(
-        "\nList of Commands supported:"
-        "\n>help"
-        "\n>clr"
-        "\n>pause"
-        "\n>quit"
-        "\n>history"
-        "\n>cd"
-		"\n>dir"
-		"\n>echo"
-		"\n>run"
-		"\n>environ"
-		"\n>myshell");
+        "List of Commands supported:"
+        "\n1. help"
+        "\n2. clr"
+        "\n3. pause"
+        "\n4. quit"
+        "\n5. history"
+        "\n6. cd <directory>"
+		"\n7. dir <directory>"
+		"\n8. echo <your-string>"
+		"\n9. run"
+		"\n10. environ"
+		"\n11. myshell");
 }
 
 void showHistory(){
@@ -88,20 +99,27 @@ void showHistory(){
 
 void showDirectoryContent(char* dirName){
 	struct dirent *de;  
-    DIR *dr = opendir(dirName);
-  
+	char cwd2[maxBuffer];
+	getcwd(cwd2,maxBuffer);
+	strcat(cwd2, "/");
+	strcat(cwd2, dirName);
+	printf("DEBUG_PRINT: %s\n", cwd2);
+    
+	DIR *dr = opendir(cwd2);
+	
     if (dr == NULL) {
         switch (errno) {
             case EACCES: printf("Permission denied\n"); break;
             case ENOENT: printf("Directory does not exist\n"); break;
             case ENOTDIR: printf("'%s' is not a directory\n", dirName); break;
         }
+		return;
     }
-    int cnt=0;
+	int cnt = 0;
     while ((de = readdir(dr)) != NULL){
-    	cnt++;
-    	if(cnt>2){
-    		printf("%s\n", de->d_name);
+		cnt++;
+		if (cnt > 2){
+			printf("%s\n", de->d_name);
 		}
 	}
     closedir(dr);
@@ -143,13 +161,11 @@ void runExecutable(char** tokens){
 	}
 }
 
-void showEnvironmentVariables(char* envp[]){
-	for (int i = 0; envp[i] != NULL; i++){
-		printf("\n%s", envp[i]);
-	}
+void showEnvironmentVariables(){
+	for (char **env = environ; *env; ++env) printf("%s\n", *env);
 }
 
-void callFunction(char* cmd_str, char* envp[]){
+void callFunction(char* cmd_str){
 	if(!strcmp((const char*)cmd_str,"help")){
 		giveHelp();
 	}
@@ -160,7 +176,7 @@ void callFunction(char* cmd_str, char* envp[]){
 		system("clear");
 	}
 	else if(!strcmp((const char*)cmd_str,"environ")){
-		showEnvironmentVariables(envp);
+		showEnvironmentVariables();
 	}
 	char* tokens[100];
 	int cnt_val = tokenize(cmd_str,tokens);
@@ -172,12 +188,21 @@ void callFunction(char* cmd_str, char* envp[]){
 	}
 }
 
-int main(int argc, char** argv, char * envp[]){
+int main(int argc, char** argv){
 	cmd_count=0;
 	char inputStr[maxBuffer];
 	init_commands();
+	// set shell env variable (Q10)
+	char shell_env[maxBuffer] = "shell=";
+	char cwd123[maxBuffer];
+	getcwd(cwd123,maxBuffer);
+	strcat(shell_env, cwd123);
+	strcat(shell_env, "=myshell");
+	if (putenv(shell_env) == -1) printf("putenv: Env var: shell failed\n");
+	else printf("Setting env var shell to location from which shell was invoked.\n[+] env var: shell=%s", getenv("shell"));
+		
 	while(1){
-		printCurrentDirectory();
+		printCurrentDirectory(1);
 		if(inputTaken(inputStr)){
 			continue;
 		}
@@ -191,20 +216,34 @@ int main(int argc, char** argv, char * envp[]){
 			else if(!strcmp(inputStr,"clr")){
 				system("clear");
 			}
+			else if(!strcmp(inputStr,"pause")){
+				char lookForEnter;
+				while((lookForEnter = getchar()) != '\n');  
+			}
 			else if(!strcmp(inputStr,"quit")){
 				printf("GoodBye\n");
 				exit(0);
 			}
-			else if(!strcmp(inputStr,"history")){
+			else if(!strcmp(inputStr, "history")){
 				showHistory();
 			}
-			else if(!strcmp(tokens[0],"dir")){
-				showDirectoryContent(tokens[1]);
+			else if(!strcmp(inputStr, "dir")){
+				printf("No directory provided.");
 			}
 			else if(!strcmp(inputStr,"environ")){
-				showEnvironmentVariables(envp);
+				showEnvironmentVariables();
+			}
+			else if(!strcmp(inputStr,"cd")){    
+				char cwd_lo[maxBuffer]; 
+				getcwd(cwd_lo, maxBuffer);
+				printf("No arguement passed to cd(PWD)\nCurrently at: %s", cwd_lo);
+				if(setenv("PWD", cwd_lo, 2) == 0)
+					printf("\n[+] env var: PWD set to: %s", getenv("PWD"));
+				else 
+					printf("\n[-] Couldn't set env var PWD :(");
 			}
 		}
+		
 		if(counter>1){
 			if(!strcmp(tokens[0],"cd")){
 				changeCWD(tokens[1]);
@@ -214,6 +253,9 @@ int main(int argc, char** argv, char * envp[]){
 			}
 			else if(!strcmp(tokens[0],"run")){
 				runExecutable(tokens);
+			}
+			else if(!strcmp(tokens[0],"dir")){
+				showDirectoryContent(tokens[1]);
 			}
 			else if(!strcmp(tokens[0],"myshell")){
 				FILE *filePointer;
@@ -225,8 +267,11 @@ int main(int argc, char** argv, char * envp[]){
 				   if (c){
 				   	   *c = 0;
 				   }
-				   callFunction(dataToBeRead,envp);
+				   callFunction(dataToBeRead);
 			    }
+			}
+			else{
+				printf("Invalid command or too many arguements passed. Try: help for more info.");
 			}
 		}
 	}
