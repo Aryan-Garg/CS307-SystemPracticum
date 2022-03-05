@@ -1,0 +1,684 @@
+S0: Thinking
+S4: Thinking
+S4: Waiting for Spoons
+S4: One spoon acquired
+S4: Eating
+S3: Thinking
+S1: Thinking
+S2: Thinking
+S2: Waiting for Spoons
+S2: One spoon acquired
+S2: Eating
+S0: Waiting for Spoons
+S3: Waiting for Spoons
+S1: Waiting for Spoons
+S1: One spoon acquired
+S4: Thinking
+S4: Waiting for Spoons
+S0: One spoon acquired
+S2: Thinking
+S2: Waiting for Spoons
+S3: One spoon acquired
+S3: Eating
+S1: Eating
+S3: Thinking
+S1: Thinking
+S1: Waiting for Spoons
+S2: One spoon acquired
+S2: Eating
+S0: Eating
+S3: Waiting for Spoons
+S2: Thinking
+S0: Thinking
+S0: Waiting for Spoons
+S4: One spoon acquired
+S4: Eating
+S3: One spoon acquired
+S1: One spoon acquired
+S1: Eating
+S2: Waiting for Spoons
+S1: Thinking
+S4: Thinking
+S4: Waiting for Spoons
+S2: One spoon acquired
+S0: One spoon acquired
+S0: Eating
+S3: Eating
+S1: Waiting for Spoons
+S3: Thinking
+S0: Thinking
+S2: Eating
+S4: One spoon acquired
+S4: Eating
+S1: One spoon acquired
+S3: Waiting for Spoons
+S0: Waiting for Spoons
+S4: Thinking
+S2: Thinking
+S1: Eating
+S0: One spoon acquired
+S3: One spoon acquired
+S3: Eating
+S2: Waiting for Spoons
+S4: Waiting for Spoons
+S1: Thinking
+S0: Eating
+S2: One spoon acquired
+S3: Thinking
+S3: Waiting for Spoons
+S2: Eating
+S1: Waiting for Spoons
+S0: Thinking
+S4: One spoon acquired
+S4: Eating
+S1: One spoon acquired
+S2: Thinking
+S2: Waiting for Spoons
+S3: One spoon acquired
+S1: Eating
+S0: Waiting for Spoons
+S4: Thinking
+S4: Waiting for Spoons
+S0: One spoon acquired
+S3: Eating
+S1: Thinking
+S1: Waiting for Spoons
+S2: One spoon acquired
+S0: Eating
+S3: Thinking
+S2: Eating
+S0: Thinking
+S0: Waiting for Spoons
+S1: One spoon acquired
+S4: One spoon acquired
+S4: Eating
+S3: Waiting for Spoons
+S2: Thinking
+S2: Waiting for Spoons
+S1: Eating
+S3: One spoon acquired
+S4: Thinking
+S4: Waiting for Spoons
+S0: One spoon acquired
+S3: Eating
+S1: Thinking
+S1: Waiting for Spoons
+S2: One spoon acquired
+S0: Eating
+S3: Thinking
+S2: Eating
+S3: Waiting for Spoons
+S2: Thinking
+S2: Waiting for Spoons
+S2: One spoon acquired
+S4: One spoon acquired
+S4: Eating
+S3: One spoon acquired
+S0: Thinking
+S1: One spoon acquired
+S0: Waiting for Spoons
+S4: Thinking
+S3: Eating
+S0: One spoon acquired
+S4: Waiting for Spoons
+S3: Thinking
+S2: Eating
+S3: Waiting for Spoons
+S2: Thinking
+S2: Waiting for Spoons
+S3: One spoon acquired
+S3: Eating
+S1: Eating
+S3: Thinking
+S1: Thinking
+S2: One spoon acquired
+S2: Eating
+S0: Eating
+S1: Waiting for Spoons
+S3: Waiting for Spoons
+S2: Thinking
+S2: Waiting for Spoons
+S2: One spoon acquired
+S4: One spoon acquired
+S4: Eating
+S0: Thinking
+S3: One spoon acquired
+S1: One spoon acquired
+S0: Waiting for Spoons
+S4: Thinking
+S4: Waiting for Spoons
+S3: Eating
+S0: One spoon acquired
+S3: Thinking
+S2: Eating
+S3: Waiting for Spoons
+S2: Thinking
+S1: Eating
+S3: One spoon acquired
+S3: Eating
+S2: Waiting for Spoons
+S3: Thinking
+S1: Thinking
+S1: Waiting for Spoons
+S2: One spoon acquired
+S2: Eating
+S0: Eating
+S3: Waiting for Spoons
+S2: Thinking
+S0: Thinking
+S0: Waiting for Spoons
+S4: One spoon acquired
+S4: Eating
+S3: One spoon acquired
+S1: One spoon acquired
+S1: Eating
+S2: Waiting for Spoons
+S1: Thinking
+S1: Waiting for Spoons
+S1: One spoon acquired
+S3: Eating
+S0: One spoon acquired
+S2: One spoon acquired
+S4: Thinking
+S4: Waiting for Spoons
+S3: Thinking
+S2: Eating
+S3: Waiting for Spoons
+S2: Thinking
+S2: Waiting for Spoons
+S3: One spoon acquired
+S3: Eating
+S1: Eating
+S3: Thinking
+S1: Thinking
+S2: One spoon acquired
+S2: Eating
+S0: Eating
+S1: Waiting for Spoons
+S3: Waiting for Spoons
+S2: Thinking
+S2: Waiting for Spoons
+S2: One spoon acquired
+S4: One spoon acquired
+S4: Eating
+S0: Thinking
+S0: Waiting for Spoons
+S1: One spoon acquired
+S3: One spoon acquired
+S4: Thinking
+S3: Eating
+S0: One spoon acquired
+S4: Waiting for Spoons
+S3: Thinking
+S2: Eating
+S3: Waiting for Spoons
+S2: Thinking
+S2: Waiting for Spoons
+S3: One spoon acquired
+S3: Eating
+S1: Eating
+S3: Thinking
+S3: Waiting for Spoons
+S3: One spoon acquired
+S3: Eating
+S1: Thinking
+S1: Waiting for Spoons
+S2: One spoon acquired
+S0: Eating
+S3: Thinking
+S3: Waiting for Spoons
+S2: Eating
+S0: Thinking
+S0: Waiting for Spoons
+S1: One spoon acquired
+S4: One spoon acquired
+S4: Eating
+S2: Thinking
+S2: Waiting for Spoons
+S3: One spoon acquired
+S1: Eating
+S4: Thinking
+S3: Eating
+S0: One spoon acquired
+S4: Waiting for Spoons
+S1: Thinking
+S0: Eating
+S2: One spoon acquired
+S3: Thinking
+S2: Eating
+S1: Waiting for Spoons
+S3: Waiting for Spoons
+S0: Thinking
+S0: Waiting for Spoons
+S1: One spoon acquired
+S4: One spoon acquired
+S4: Eating
+S2: Thinking
+S1: Eating
+S3: One spoon acquired
+S2: Waiting for Spoons
+S4: Thinking
+S4: Waiting for Spoons
+S0: One spoon acquired
+S3: Eating
+S1: Thinking
+S0: Eating
+S2: One spoon acquired
+S1: Waiting for Spoons
+S3: Thinking
+S2: Eating
+S0: Thinking
+S4: One spoon acquired
+S4: Eating
+S1: One spoon acquired
+S3: Waiting for Spoons
+S0: Waiting for Spoons
+S2: Thinking
+S1: Eating
+S3: One spoon acquired
+S4: Thinking
+S4: Waiting for Spoons
+S0: One spoon acquired
+S3: Eating
+S2: Waiting for Spoons
+S1: Thinking
+S1: Waiting for Spoons
+S2: One spoon acquired
+S0: Eating
+S3: Thinking
+S2: Eating
+S3: Waiting for Spoons
+S0: Thinking
+S4: One spoon acquired
+S4: Eating
+S1: One spoon acquired
+S2: Thinking
+S1: Eating
+S3: One spoon acquired
+S0: Waiting for Spoons
+S2: Waiting for Spoons
+S4: Thinking
+S4: Waiting for Spoons
+S0: One spoon acquired
+S3: Eating
+S1: Thinking
+S0: Eating
+S2: One spoon acquired
+S1: Waiting for Spoons
+S3: Thinking
+S2: Eating
+S0: Thinking
+S0: Waiting for Spoons
+S1: One spoon acquired
+S4: One spoon acquired
+S4: Eating
+S3: Waiting for Spoons
+S2: Thinking
+S1: Eating
+S3: One spoon acquired
+S4: Thinking
+S4: Waiting for Spoons
+S0: One spoon acquired
+S3: Eating
+S2: Waiting for Spoons
+S1: Thinking
+S1: Waiting for Spoons
+S2: One spoon acquired
+S0: Eating
+S3: Thinking
+S2: Eating
+S3: Waiting for Spoons
+S0: Thinking
+S4: One spoon acquired
+S4: Eating
+S1: One spoon acquired
+S2: Thinking
+S2: Waiting for Spoons
+S3: One spoon acquired
+S1: Eating
+S0: Waiting for Spoons
+S4: Thinking
+S4: Waiting for Spoons
+S0: One spoon acquired
+S3: Eating
+S1: Thinking
+S0: Eating
+S2: One spoon acquired
+S1: Waiting for Spoons
+S3: Thinking
+S3: Waiting for Spoons
+S2: Eating
+S0: Thinking
+S4: One spoon acquired
+S4: Eating
+S1: One spoon acquired
+S0: Waiting for Spoons
+S2: Thinking
+S1: Eating
+S3: One spoon acquired
+S4: Thinking
+S3: Eating
+S0: One spoon acquired
+S2: Waiting for Spoons
+S4: Waiting for Spoons
+S1: Thinking
+S0: Eating
+S2: One spoon acquired
+S3: Thinking
+S2: Eating
+S1: Waiting for Spoons
+S3: Waiting for Spoons
+S0: Thinking
+S0: Waiting for Spoons
+S1: One spoon acquired
+S4: One spoon acquired
+S4: Eating
+S2: Thinking
+S1: Eating
+S3: One spoon acquired
+S2: Waiting for Spoons
+S4: Thinking
+S4: Waiting for Spoons
+S0: One spoon acquired
+S3: Eating
+S1: Thinking
+S0: Eating
+S2: One spoon acquired
+S1: Waiting for Spoons
+S3: Thinking
+S2: Eating
+S0: Thinking
+S4: One spoon acquired
+S4: Eating
+S1: One spoon acquired
+S3: Waiting for Spoons
+S0: Waiting for Spoons
+S2: Thinking
+S2: Waiting for Spoons
+S3: One spoon acquired
+S1: Eating
+S4: Thinking
+S4: Waiting for Spoons
+S0: One spoon acquired
+S3: Eating
+S1: Thinking
+S0: Eating
+S2: One spoon acquired
+S3: Thinking
+S2: Eating
+S1: Waiting for Spoons
+S3: Waiting for Spoons
+S0: Thinking
+S0: Waiting for Spoons
+S1: One spoon acquired
+S4: One spoon acquired
+S4: Eating
+S2: Thinking
+S1: Eating
+S3: One spoon acquired
+S2: Waiting for Spoons
+S4: Thinking
+S3: Eating
+S0: One spoon acquired
+S1: Thinking
+S1: Waiting for Spoons
+S2: One spoon acquired
+S0: Eating
+S4: Waiting for Spoons
+S3: Thinking
+S2: Eating
+S0: Thinking
+S0: Waiting for Spoons
+S1: One spoon acquired
+S4: One spoon acquired
+S4: Eating
+S3: Waiting for Spoons
+S2: Thinking
+S1: Eating
+S3: One spoon acquired
+S4: Thinking
+S4: Waiting for Spoons
+S0: One spoon acquired
+S3: Eating
+S2: Waiting for Spoons
+S1: Thinking
+S1: Waiting for Spoons
+S2: One spoon acquired
+S0: Eating
+S3: Thinking
+S3: Waiting for Spoons
+S2: Eating
+S0: Thinking
+S0: Waiting for Spoons
+S1: One spoon acquired
+S4: One spoon acquired
+S4: Eating
+S2: Thinking
+S2: Waiting for Spoons
+S3: One spoon acquired
+S1: Eating
+S4: Thinking
+S3: Eating
+S0: One spoon acquired
+S1: Thinking
+S1: Waiting for Spoons
+S2: One spoon acquired
+S0: Eating
+S4: Waiting for Spoons
+S3: Thinking
+S3: Waiting for Spoons
+S2: Eating
+S0: Thinking
+S4: One spoon acquired
+S4: Eating
+S1: One spoon acquired
+S0: Waiting for Spoons
+S2: Thinking
+S2: Waiting for Spoons
+S1: Eating
+S3: One spoon acquired
+S4: Thinking
+S4: Waiting for Spoons
+S0: One spoon acquired
+S3: Eating
+S1: Thinking
+S1: Waiting for Spoons
+S2: One spoon acquired
+S0: Eating
+S3: Thinking
+S2: Eating
+S3: Waiting for Spoons
+S0: Thinking
+S4: One spoon acquired
+S4: Eating
+S1: One spoon acquired
+S2: Thinking
+S1: Eating
+S3: One spoon acquired
+S0: Waiting for Spoons
+S2: Waiting for Spoons
+S4: Thinking
+S3: Eating
+S0: One spoon acquired
+S1: Thinking
+S1: Waiting for Spoons
+S2: One spoon acquired
+S0: Eating
+S4: Waiting for Spoons
+S3: Thinking
+S2: Eating
+S0: Thinking
+S0: Waiting for Spoons
+S1: One spoon acquired
+S4: One spoon acquired
+S4: Eating
+S3: Waiting for Spoons
+S2: Thinking
+S2: Waiting for Spoons
+S3: One spoon acquired
+S1: Eating
+S4: Thinking
+S4: Waiting for Spoons
+S0: One spoon acquired
+S3: Eating
+S1: Thinking
+S0: Eating
+S2: One spoon acquired
+S3: Thinking
+S3: Waiting for Spoons
+S2: Eating
+S1: Waiting for Spoons
+S0: Thinking
+S0: Waiting for Spoons
+S1: One spoon acquired
+S4: One spoon acquired
+S4: Eating
+S2: Thinking
+S1: Eating
+S3: One spoon acquired
+S2: Waiting for Spoons
+S4: Thinking
+S4: Waiting for Spoons
+S0: One spoon acquired
+S3: Eating
+S1: Thinking
+S0: Eating
+S2: One spoon acquired
+S1: Waiting for Spoons
+S3: Thinking
+S3: Waiting for Spoons
+S2: Eating
+S0: Thinking
+S4: One spoon acquired
+S4: Eating
+S1: One spoon acquired
+S0: Waiting for Spoons
+S2: Thinking
+S2: Waiting for Spoons
+S3: One spoon acquired
+S1: Eating
+S4: Thinking
+S3: Eating
+S0: One spoon acquired
+S4: Waiting for Spoons
+S1: Thinking
+S1: Waiting for Spoons
+S2: One spoon acquired
+S0: Eating
+S3: Thinking
+S2: Eating
+S3: Waiting for Spoons
+S0: Thinking
+S0: Waiting for Spoons
+S1: One spoon acquired
+S4: One spoon acquired
+S4: Eating
+S2: Thinking
+S2: Waiting for Spoons
+S3: One spoon acquired
+S1: Eating
+S4: Thinking
+S3: Eating
+S0: One spoon acquired
+S1: Thinking
+S0: Eating
+S2: One spoon acquired
+S4: Waiting for Spoons
+S1: Waiting for Spoons
+S3: Thinking
+S2: Eating
+S0: Thinking
+S4: One spoon acquired
+S4: Eating
+S1: One spoon acquired
+S3: Waiting for Spoons
+S0: Waiting for Spoons
+S2: Thinking
+S1: Eating
+S3: One spoon acquired
+S4: Thinking
+S3: Eating
+S0: One spoon acquired
+S2: Waiting for Spoons
+S4: Waiting for Spoons
+S1: Thinking
+S1: Waiting for Spoons
+S2: One spoon acquired
+S0: Eating
+S3: Thinking
+S3: Waiting for Spoons
+S2: Eating
+S0: Thinking
+S4: One spoon acquired
+S4: Eating
+S1: One spoon acquired
+S2: Thinking
+S2: Waiting for Spoons
+S3: One spoon acquired
+S1: Eating
+S0: Waiting for Spoons
+S4: Thinking
+S4: Waiting for Spoons
+S0: One spoon acquired
+S3: Eating
+S1: Thinking
+S1: Waiting for Spoons
+S2: One spoon acquired
+S0: Eating
+S3: Thinking
+S3: Waiting for Spoons
+S2: Eating
+S0: Thinking
+S4: One spoon acquired
+S4: Eating
+S1: One spoon acquired
+S0: Waiting for Spoons
+S2: Thinking
+S1: Eating
+S3: One spoon acquired
+S4: Thinking
+S3: Eating
+S0: One spoon acquired
+S2: Waiting for Spoons
+S4: Waiting for Spoons
+S1: Thinking
+S1: Waiting for Spoons
+S2: One spoon acquired
+S0: Eating
+S3: Thinking
+S3: Waiting for Spoons
+S2: Eating
+S0: Thinking
+S4: One spoon acquired
+S4: Eating
+S1: One spoon acquired
+S2: Thinking
+S2: Waiting for Spoons
+S3: One spoon acquired
+S1: Eating
+S0: Waiting for Spoons
+S4: Thinking
+S3: Eating
+S0: One spoon acquired
+S1: Thinking
+S1: Waiting for Spoons
+S2: One spoon acquired
+S0: Eating
+S4: Waiting for Spoons
+S3: Thinking
+S2: Eating
+S0: Thinking
+S0: Waiting for Spoons
+S1: One spoon acquired
+S4: One spoon acquired
+S4: Eating
+S3: Waiting for Spoons
+S2: Thinking
+S1: Eating
+S3: One spoon acquired
+S4: Thinking
+S4: Waiting for Spoons
+S0: One spoon acquired
+S3: Eating
+S2: Waiting for Spoons
+S1: 31 S2: 32 S3: 36 S4: 36 S5: 32 
