@@ -217,6 +217,7 @@ int main(int argc, char** argv){
 				system("clear");
 			}
 			else if(!strcmp(inputStr,"pause")){
+				printf("Press Enter to terminate indefinite pause...\n");
 				char lookForEnter;
 				while((lookForEnter = getchar()) != '\n');  
 			}
