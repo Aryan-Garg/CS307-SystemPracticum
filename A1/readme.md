@@ -13,7 +13,15 @@ If the source and destination directories are the same, you can simply do:
 3. Run the Makefile to create executables for all sources:
 > make  
 
-4. To clean the executables/object files, use:
+4. **Q1:** To run the shell from the same directory (otherwise pass in the absolute path):
+> ./shell.o 
+To test the commands from batch file:
+> ./shell.o A.bat
+
+5. **Q2:** To run the simulation:
+> ./dining.o    
+
+6. To clean the executables/object files, use:
 > make clean  
 ---  
 ### Group Members:
