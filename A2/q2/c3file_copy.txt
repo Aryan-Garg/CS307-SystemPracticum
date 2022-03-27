@@ -1,0 +1,7 @@
+This file needs to be copied without the cp command.
+Also, this should be done by child process: C3.
+
+This is a part of Q2 (iii) from Assignment 2 of Systems Practicum: CS307.
+
+Cheers,
+Aryan
